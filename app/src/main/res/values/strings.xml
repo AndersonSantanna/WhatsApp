@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WhatsApp</string>
+    <string name="exemploTelefone">Ex.: 11943215698</string>
+    <string name="buttonEntrar">ENTRAR</string>
+    <string name="cadastre_se">Não tem conta? Cadastre-se</string>
+    <string name="logo">logo</string>
+    <string name="Nome">Nome</string>
+    <string name="butaoVerificar">Verificar</string>
+    <string name="codigo">Código</string>
+    <string name="BotaoCadastrar">Cadastrar</string>
+    <string name="ImagemCadastrar">Imagem Cadastrar</string>
+    <string name="codeText">Para concluir, ensira o código de seis digitos que foi enviado para seu celular via SMS, e clique no botão logar</string>
+    <string name="menuPesquisar">Pesquisar</string>
+    <string name="menuConfig">Configurações</string>
+    <string name="menuExit">Sair</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/pesquisar"
+        android:title="@string/menuPesquisar"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_search_white_24dp"/>
+    <item
+        android:id="@+id/configuracao"
+        android:title="@string/menuConfig"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/sair"
+        android:title="@string/menuExit"
+        app:showAsAction="never"/>
+</menu>
