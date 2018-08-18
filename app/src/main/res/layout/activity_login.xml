@@ -7,30 +7,25 @@
     android:background="@color/colorPrimary"
     tools:context=".activity.MainActivity"
     tools:layout_editor_absoluteY="25dp">
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout2"
+
+    <com.santalu.widget.MaskEditText
+        android:id="@+id/numberCel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:hint="@string/exemploTelefone"
+        android:inputType="phone"
+        android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/numberCel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numeric="integer"
-            android:phoneNumber="true"
-            android:singleLine="true"
-            android:textColor="@android:color/white" />
-    </android.support.design.widget.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:met_mask="+55(##) ##### ####" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout3"
@@ -42,10 +37,10 @@
         android:layout_marginStart="32dp"
         android:hint="@string/codigo"
         android:textColorHint="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        app:layout_constraintTop_toTopOf="parent">
 
     </android.support.design.widget.TextInputLayout>
 
@@ -53,11 +48,15 @@
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="204dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:contentDescription="@string/logo"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/numberCel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
         app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/logo" />
 
@@ -65,28 +64,27 @@
         android:id="@+id/buttonEntrar"
         android:layout_width="0dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
         android:background="@color/colorPrimaryDark"
         android:text="@string/buttonEntrar"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/numberCel" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:onClick="cadastrar"
         android:text="@string/cadastre_se"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
@@ -96,12 +94,7 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

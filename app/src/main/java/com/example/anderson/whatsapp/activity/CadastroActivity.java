@@ -39,7 +39,7 @@ public class CadastroActivity extends AppCompatActivity {
         bar = findViewById(R.id.progressBar2);
 
         auth = ConfiguracaoFirebase.getFirebaseAuth();
-        auth.getCurrentUser().getPhoneNumber();
+
 
         findViewById(R.id.buttonVerificar).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,11 +59,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     }
 
-    private void verificarCode() {
-        String code = codigo.getText().toString();
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeSend, code);
-        signInWithPhoneAuthCredential(credential);
-    }
+
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
         auth.signInWithCredential(credential)
@@ -103,25 +99,26 @@ public class CadastroActivity extends AppCompatActivity {
 
             bar.setVisibility(View.VISIBLE);
             phoneNumber = "+55" + phoneNumber;
+            PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber, 60, TimeUnit.SECONDS, CadastroActivity.this, new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                @Override
+                public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                    signInWithPhoneAuthCredential(phoneAuthCredential);
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                }
+
+                @Override
+                public void onVerificationFailed(FirebaseException e) {
+
+                }
+
+                @Override
+                public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                    super.onCodeSent(s, forceResendingToken);
+                    codeSend = s;
+                }
+            });
         }
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber, 60, TimeUnit.SECONDS, CadastroActivity.this, new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            @Override
-            public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-
-                startActivity(new Intent(getApplicationContext(), CodeActivity.class));
-            }
-
-            @Override
-            public void onVerificationFailed(FirebaseException e) {
-
-            }
-
-            @Override
-            public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                super.onCodeSent(s, forceResendingToken);
-                codeSend =s;
-            }
-        });
     }
     public void validaCampos(){
         if (!nome.getText().toString().isEmpty()){

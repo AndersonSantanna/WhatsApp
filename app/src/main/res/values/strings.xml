@@ -13,4 +13,9 @@
     <string name="menuPesquisar">Pesquisar</string>
     <string name="menuConfig">Configurações</string>
     <string name="menuExit">Sair</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="contatos">Contatos</string>
+    <string name="conversas">Conversas</string>
+    <string name="txtPerfil">Esse não é seu nome de usúario nem sua senha.\\nEste nome ficará visivel para seus contatos do Whatspp.</string>
 </resources>

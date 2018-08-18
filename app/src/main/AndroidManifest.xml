@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anderson.whatsapp">
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -20,7 +24,10 @@
         </activity>
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.CodeActivity" />
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.ConfiguracaoActivity" android:parentActivityName=".activity.MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
