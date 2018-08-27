@@ -4,4 +4,5 @@
     <style name="DialogStyle" parent="@android:style/Theme.Material.Light.Dialog.Alert">
         <item name="android:colorAccent">@android:color/black</item>
     </style>
+
 </resources>

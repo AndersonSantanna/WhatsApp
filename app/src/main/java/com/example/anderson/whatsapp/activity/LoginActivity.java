@@ -56,13 +56,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validarCampos()) {
                     enviarCode();
-                    Log.i("tele", "+55"+number.getRawText());
                 }
             }
         });
     }
     public void enviarCode(){
-        PhoneAuthProvider.getInstance().verifyPhoneNumber("+55"+number.getRawText(), 60, TimeUnit.SECONDS, LoginActivity.this, new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        String numero = "+55" + number.getRawText();
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(numero, 60, TimeUnit.SECONDS, LoginActivity.this, new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
                 signInWithPhoneAuthCredential(phoneAuthCredential);
@@ -119,7 +119,6 @@ public class LoginActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                abrirTelaPrincipal(CodeActivity.class);
             }
         });
     }

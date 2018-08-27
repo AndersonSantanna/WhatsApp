@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.anderson.whatsapp.Fragment.ContatosFragment;
 import com.example.anderson.whatsapp.Fragment.ConversasFragment;
 import com.example.anderson.whatsapp.R;
 import com.example.anderson.whatsapp.config.ConfiguracaoFirebase;
+import com.example.anderson.whatsapp.helper.UsuarioFirebase;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("WhatsApp");
         setSupportActionBar(toolbar);
 
+        auth = ConfiguracaoFirebase.getFirebaseAuth();
+
         //Configurar abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
@@ -37,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.string.contatos, ContatosFragment.class)
                 .create()
         );
+
         ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
 
         SmartTabLayout smartTabLayout = findViewById(R.id.viewPagerTab);
         smartTabLayout.setViewPager(viewPager);
 
-        auth = ConfiguracaoFirebase.getFirebaseAuth();
 
     }
 

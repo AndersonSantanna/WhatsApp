@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.anderson.whatsapp">
-    
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -22,11 +26,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.CadastroActivity" />
-        <activity android:name=".activity.CodeActivity" />
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.ConfiguracaoActivity" android:parentActivityName=".activity.MainActivity">
-
+        <activity
+            android:name=".activity.CadastroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ConfiguracaoActivity"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AlterNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.anderson.whatsapp.activity.MainActivity" />
         </activity>
     </application>
 

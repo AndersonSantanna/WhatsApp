@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">WhatsApp</string>
-    <string name="exemploTelefone">Ex.: 11943215698</string>
+    <string name="exemploTelefone">Numero: Ex: (11) 91230 8791</string>
     <string name="buttonEntrar">ENTRAR</string>
     <string name="cadastre_se">Não tem conta? Cadastre-se</string>
     <string name="logo">logo</string>
@@ -18,4 +18,5 @@
     <string name="contatos">Contatos</string>
     <string name="conversas">Conversas</string>
     <string name="txtPerfil">Esse não é seu nome de usúario nem sua senha.\\nEste nome ficará visivel para seus contatos do Whatspp.</string>
+    <string name="title_activity_chat">ChatActivity</string>
 </resources>
