@@ -7,4 +7,5 @@
     <color name="colorButton">#18923b</color>
     <color name="background_material_dark">#ffffff</color>
     <color name="foreground_material_light">#ffffff</color>
+    <color name="balaoRemetente">#dbf9c4</color>
 </resources>

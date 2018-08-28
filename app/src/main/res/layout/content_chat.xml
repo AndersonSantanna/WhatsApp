@@ -11,6 +11,7 @@
     tools:showIn="@layout/activity_chat">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerChat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
@@ -36,7 +37,7 @@
             android:paddingLeft="5dp">
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editMensagem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6.5dp"
@@ -60,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:onClick="enviar"
             app:backgroundTint="@color/colorPrimary"
             app:fabSize="mini"
             app:srcCompat="@drawable/ic_send_white_24dp"
