@@ -1,9 +1,16 @@
 package com.example.anderson.whatsapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.anderson.whatsapp.R;
 import com.example.anderson.whatsapp.helper.UsuarioFirebase;
 import com.example.anderson.whatsapp.model.Mensagem;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -49,8 +57,11 @@ public class MensagensAdapter extends RecyclerView.Adapter<MensagensAdapter.MyVi
         Mensagem mensagem =  list.get(position);
 
         if (mensagem.getImagem() != null ){
-            Uri url = Uri.parse(mensagem.getImagem());
-            Glide.with(context).load(url).into(holder.imageView);
+
+            Uri uri = Uri.parse(mensagem.getImagem());
+            Glide.with(context).load(uri).into(holder.foto);
+//            holder.foto.setImageResource(R.drawable.logo);
+            Log.i("URI", uri.toString());
 
             //Esconder texto
             holder.msg.setVisibility(View.GONE);
@@ -58,7 +69,7 @@ public class MensagensAdapter extends RecyclerView.Adapter<MensagensAdapter.MyVi
         }else{
 
             holder.msg.setText(mensagem.getMensagem());
-            holder.imageView.setVisibility(View.GONE);
+            holder.foto.setVisibility(View.GONE);
         }
     }
 
@@ -81,11 +92,11 @@ public class MensagensAdapter extends RecyclerView.Adapter<MensagensAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView msg;
-        ImageView imageView;
+        ImageView foto;
         public MyViewHolder(View itemView) {
             super(itemView);
             msg = itemView.findViewById(R.id.textMsg);
-            imageView = itemView.findViewById(R.id.imageMsg);
+            foto = itemView.findViewById(R.id.imageMsg);
         }
     }
 }

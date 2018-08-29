@@ -6,6 +6,12 @@ public class Mensagem {
     public Mensagem() {
     }
 
+    public Mensagem(String idUsuario, String mensagem, String imagem) {
+        this.idUsuario = idUsuario;
+        this.mensagem = mensagem;
+        this.imagem = imagem;
+    }
+
     public Mensagem(String idUsuario, String mensagem) {
         this.idUsuario = idUsuario;
         this.mensagem = mensagem;

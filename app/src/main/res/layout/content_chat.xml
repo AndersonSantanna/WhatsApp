@@ -40,7 +40,7 @@
                 android:id="@+id/editMensagem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6.5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@android:color/background_light"
                 android:ems="10"
@@ -51,8 +51,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                app:srcCompat="@drawable/ic_photo_camera_black_24dp"
+                android:layout_marginRight="8dp"
+                app:srcCompat="@drawable/ic_add_to_photos_black_24dp"
                 tools:ignore="VectorDrawableCompat" />
         </LinearLayout>
 
